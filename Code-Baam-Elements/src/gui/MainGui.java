@@ -77,11 +77,11 @@ public class MainGui {
 		frame.getContentPane().add(panel_3, gbc_panel_3);
 		
 		JLabel lblNewLabel_2 = new JLabel("100");
-		lblNewLabel_2.setIcon(new ImageIcon(MainGui.class.getResource("/resources/hearth_2.png")));
+		lblNewLabel_2.setIcon(new ImageIcon(MainGui.class.getResource("/data/hearth_2.png")));
 		lblNewLabel_2.setHorizontalTextPosition(JLabel.CENTER);
 		
 		JLabel lblNewLabel_3 = new JLabel("New label");
-		lblNewLabel_3.setIcon(new ImageIcon(MainGui.class.getResource("/resources/Avatar_2.png")));
+		lblNewLabel_3.setIcon(new ImageIcon(MainGui.class.getResource("/data/Avatar_2.png")));
 		GroupLayout gl_panel_3 = new GroupLayout(panel_3);
 		gl_panel_3.setHorizontalGroup(
 			gl_panel_3.createParallelGroup(Alignment.LEADING)
@@ -121,11 +121,11 @@ public class MainGui {
 		frame.getContentPane().add(panel_2, gbc_panel_2);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(MainGui.class.getResource("/resources/Avatar_1.png")));
+		lblNewLabel.setIcon(new ImageIcon(MainGui.class.getResource("/data/Avatar_1.png")));
 		
 		JLabel lblNewLabel_1 = new JLabel("100");
 		lblNewLabel_1.setHorizontalTextPosition(JLabel.CENTER);
-		lblNewLabel_1.setIcon(new ImageIcon(MainGui.class.getResource("/resources/hearth_1.png")));
+		lblNewLabel_1.setIcon(new ImageIcon(MainGui.class.getResource("/data/hearth_1.png")));
 		GroupLayout gl_panel_2 = new GroupLayout(panel_2);
 		gl_panel_2.setHorizontalGroup(
 			gl_panel_2.createParallelGroup(Alignment.LEADING)
