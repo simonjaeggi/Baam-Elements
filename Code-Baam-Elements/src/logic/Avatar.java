@@ -14,6 +14,8 @@ public class Avatar{
 		return Lebenspunkte;
 	}
 	public double AngreifenAufrufen(){
-		return 0;
+		angriff = new Schlag();
+		double zw = angriff.angreifen();
+		return zw;
 	}
 }

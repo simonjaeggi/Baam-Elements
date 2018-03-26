@@ -10,6 +10,9 @@ public class AvatarStaerke {
 
 	}
 	public Avatar Staerkenvergleich(){
-		return Avatar_1;
+		Avatar zw = null;
+			if(Avatar_1.get)
+		
+		return zw;
 	}
 }
