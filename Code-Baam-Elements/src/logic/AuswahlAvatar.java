@@ -18,7 +18,7 @@ public class AuswahlAvatar {
 	 * @return Avatar
 	 * Gibt einen zufällig ausgewählten Avatar zurück.
 	 */
-	public Avatar RandomGegner(){
+	public Avatar RandomAvatar(){
 		Random rand = new Random();
 		int rz = rand.nextInt((4 - 1) + 1) + 1;
 
