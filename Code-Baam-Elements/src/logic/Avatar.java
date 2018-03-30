@@ -18,8 +18,14 @@ public class Avatar{
 		Lebenspunkte = Lebenspunkte - zw;
 	}
 	
-
-
+	/**
+	 * 
+	 * @param Lp
+	 * 
+	 */
+	protected void setLebenspunkte(double Lp){
+		this.Lebenspunkte = Lebenspunkte;
+	}
 	public double getLebenspunkte(){
 		return Lebenspunkte;
 	}
