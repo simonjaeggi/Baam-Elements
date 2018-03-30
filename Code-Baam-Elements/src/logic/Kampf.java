@@ -13,9 +13,9 @@ public class Kampf {
 		as = new AvatarStaerke(Avatar_1, Avatar_2);
 		StarkerAvatar = as.Staerkenvergleich();
 		
-		kaempfen();
+		
 	}
-	private void kaempfen(){
+	public void kaempfen(){
 		
 		double zw = Avatar_1.AngreifenAufrufen();
 		if(Avatar_1 == StarkerAvatar){
