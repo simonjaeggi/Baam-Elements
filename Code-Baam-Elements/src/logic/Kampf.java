@@ -1,12 +1,21 @@
 package logic;
 import data.AvatarStaerke;;
-
+/**
+ * 
+ * @author Simon Jäggi, Lukas Reinhardt
+ * Die Klasse Kampf wird zentral zur simulation des Kampfes simuliert.
+ */
 public class Kampf {
 	private Avatar Avatar_1;
 	private Avatar Avatar_2;
 	private Avatar StarkerAvatar;
 	private AvatarStaerke as;
-	
+	/**
+	 * 
+	 * @param Avatar_1
+	 * @param Avatar_2
+	 * Konstruktor, die beiden kaempfenden Avatare werden lokal gespeichert und auf Staerke ueberprueft.
+	 */
 	public Kampf(Avatar Avatar_1, Avatar Avatar_2){
 		this.Avatar_1 = Avatar_1;
 		this.Avatar_2 = Avatar_2;
@@ -15,6 +24,9 @@ public class Kampf {
 		
 		
 	}
+	/**
+	 * hier werden die einzelnen Angriffe ausgeführt und verrechnet. Falls einer der Avatare stirbt wird eine entsprechende Methode aufgerufen.
+	 */
 	public void kaempfen(){
 		
 		double zw = Avatar_1.AngreifenAufrufen();
@@ -37,6 +49,12 @@ public class Kampf {
 		}
 		
 	}
+	/**
+	 * 
+	 * @param avatar
+	 * @return
+	 * Hier wird bei einem Avatar ueberprueft, ob er gestorben ist.
+	 */
 	private boolean gestorben(Avatar avatar){
 
 		if (avatar.getLebenspunkte() <= 1){
@@ -44,9 +62,15 @@ public class Kampf {
 		}
 		return false;
 	}
+	/**
+	 * Diese Methode wird aufgerufen, wenn der Spieler gewonnen hat. Eine entsprechende Meldung wird ausgegeben.
+	 */
 	private void gewonnen(){
 		System.out.println("Yaay, you won!");
 	}
+	/**
+	 * Diese Methode wird aufgerufen, wenn der Spieler verloren hat. Eine entsprechende Meldung wird ausgegeben.
+	 */
 	private void verloren(){
 		System.out.println("Awww, you lost!");
 	}

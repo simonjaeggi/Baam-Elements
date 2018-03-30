@@ -3,9 +3,8 @@ import java.util.Random;
 
 /**
  * 
- * @author Simon Jäggi, Lukas Reinhardt
- * @version 0.1 
- * Wählt zufällig einen Avatar aus.
+ * @author Simon Jäggi, Lukas Reinhardt 
+ * Klasse zur zufaelligen Auswahl eines Avatars.
   */
 public class AuswahlAvatar {
 	private Avatar Feuerelementar = new Feuerelementar();
@@ -16,7 +15,7 @@ public class AuswahlAvatar {
 	/**
 	 * 
 	 * @return Avatar
-	 * Gibt einen zufällig ausgewählten Avatar zurück.
+	 * Gibt einen zufaellig ausgewählten Avatar zurück.
 	 */
 	public Avatar RandomAvatar(){
 		Random rand = new Random();
