@@ -3,7 +3,7 @@ import java.util.Random;
 
 /**
  * 
- * @author Simon Jäggi, Lukas Reinhardt
+ * @author Simon Jaeggi, Lukas Reinhardt
  * Stellt den Angriff "Schlag" dar.
  */
 public class Schlag implements Angriffsverhalten{
@@ -13,7 +13,7 @@ public class Schlag implements Angriffsverhalten{
 	private Random rand = new Random();
 
 	/**
-	 * hier wird der Schadenswert des Schlages verrechnet. Dabei wird auf verfehlen und kritisch treffen überprüft.
+	 * hier wird der Schadenswert des Schlages verrechnet. Dabei wird auf verfehlen und kritisch treffen Ueberprueft.
 	 */
 	public double angreifen() {
 		double zw = 0;

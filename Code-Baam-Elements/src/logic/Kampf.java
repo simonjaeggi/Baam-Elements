@@ -2,7 +2,7 @@ package logic;
 import data.AvatarStaerke;;
 /**
  * 
- * @author Simon Jäggi, Lukas Reinhardt
+ * @author Simon Jaeggi, Lukas Reinhardt
  * Die Klasse Kampf wird zentral zur simulation des Kampfes simuliert.
  */
 public class Kampf {
@@ -25,7 +25,7 @@ public class Kampf {
 		
 	}
 	/**
-	 * hier werden die einzelnen Angriffe ausgeführt und verrechnet. Falls einer der Avatare stirbt wird eine entsprechende Methode aufgerufen.
+	 * hier werden die einzelnen Angriffe ausgefuehrt und verrechnet. Falls einer der Avatare stirbt wird eine entsprechende Methode aufgerufen.
 	 */
 	public void kaempfen(){
 		

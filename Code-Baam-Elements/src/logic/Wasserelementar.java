@@ -1,7 +1,7 @@
 package logic;
 /**
  * 
- * @author Simon Jäggi, Lukas Reinhardt
+ * @author Simon Jaeggi, Lukas Reinhardt
  * Unterklasse von Avatar, stellt den Wasserelementar dar.
  */
 public class Wasserelementar extends Avatar{

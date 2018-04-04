@@ -3,7 +3,7 @@ import java.util.Random;
 
 /**
  * 
- * @author Simon Jäggi, Lukas Reinhardt 
+ * @author Simon Jaeggi, Lukas Reinhardt 
  * Klasse zur zufaelligen Auswahl eines Avatars.
   */
 public class AuswahlAvatar {

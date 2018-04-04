@@ -1,8 +1,7 @@
 package logic;
 /**
  * 
- * @author simon
- * @version 0.1
+ * @author Simon Jaeggi,  Lukas Reinhardt
  * Dieses Interface dient als Einheitliche Schnittstelle für die verschiedenen Angriffe.
  */
 public interface Angriffsverhalten {

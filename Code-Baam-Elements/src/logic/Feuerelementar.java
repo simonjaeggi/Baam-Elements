@@ -1,7 +1,7 @@
 package logic;
 /**
  * 
- * @author Simon Jäggi, Lukas Reinhardt
+ * @author Simon Jaeggi, Lukas Reinhardt
  * Unterklasse von Avatar, stellt den Feuerelementar dar.
  */
 public class Feuerelementar extends Avatar{

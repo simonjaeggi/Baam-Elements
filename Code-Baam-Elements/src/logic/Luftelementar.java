@@ -1,7 +1,7 @@
 package logic;
 /**
  * 
- * @author Simon Jäggi, Lukas Reinhardt
+ * @author Simon Jaeggi, Lukas Reinhardt
  * Unterklasse von Avatar, stellt den Luftelementar dar.
  */
 public class Luftelementar extends Avatar{

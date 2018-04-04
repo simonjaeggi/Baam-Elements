@@ -2,7 +2,7 @@ package logic;
 /**
  * 
  * @author Simon Jäggi, Lukas Reinhardt
- * Oberklasse für die einzelnen Avatare, vereint alle gemeinsamen Attribute.
+ * Oberklasse fuer die einzelnen Avatare, vereint alle gemeinsamen Attribute.
  */
 public class Avatar{
 	private double Lebenspunkte;
