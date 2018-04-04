@@ -23,7 +23,7 @@ public class Avatar{
 	 * 
 	 */
 	protected void setLebenspunkte(double Lp){
-		this.Lebenspunkte = Lebenspunkte;
+		this.Lebenspunkte = Lp;
 	}
 	public double getLebenspunkte(){
 		return Lebenspunkte;
