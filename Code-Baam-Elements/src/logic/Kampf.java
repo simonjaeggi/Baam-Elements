@@ -67,11 +67,13 @@ public class Kampf {
 	 */
 	private void gewonnen(){
 		System.out.println("Yaay, you won!");
+		System.exit(0);
 	}
 	/**
 	 * Diese Methode wird aufgerufen, wenn der Spieler verloren hat. Eine entsprechende Meldung wird ausgegeben.
 	 */
 	private void verloren(){
 		System.out.println("Awww, you lost!");
+		System.exit(0);
 	}
 }
