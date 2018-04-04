@@ -16,6 +16,14 @@ public class test {
 		s.kaempfen();
 		s.kaempfen();
 		s.kaempfen();
+		s.kaempfen();
+		s.kaempfen();
+		s.kaempfen();
+		s.kaempfen();
+		s.kaempfen();
+		s.kaempfen();
+		s.kaempfen();
+		
 		
 
 		System.out.println("test");
