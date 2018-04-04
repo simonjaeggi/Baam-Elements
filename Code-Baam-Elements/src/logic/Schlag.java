@@ -7,8 +7,8 @@ import java.util.Random;
  * Stellt den Angriff "Schlag" dar.
  */
 public class Schlag implements Angriffsverhalten{
-	private double KritischerTreffer;
-	private double Verfehlen;
+	private double KritischerTreffer = 0.25;
+	private double Verfehlen = 0.3;
 	private double Schaden = 15;
 	private Random rand = new Random();
 
