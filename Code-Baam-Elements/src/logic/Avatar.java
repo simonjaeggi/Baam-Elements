@@ -1,7 +1,7 @@
 package logic;
 /**
  * 
- * @author Simon Jäggi, Lukas Reinhardt
+ * @author Simon Jaeggi, Lukas Reinhardt
  * Oberklasse fuer die einzelnen Avatare, vereint alle gemeinsamen Attribute.
  */
 public class Avatar{
