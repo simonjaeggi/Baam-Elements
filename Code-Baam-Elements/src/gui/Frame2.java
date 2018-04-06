@@ -10,6 +10,10 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 public class Frame2 {
 
@@ -74,15 +78,16 @@ public class Frame2 {
 		JLabel Lebensanzeige = new JLabel("100");
 		Lebensanzeige.setFont(new Font("Tahoma", Font.BOLD, 32));
 		Lebensanzeige.setForeground(new Color(255, 255, 255));
-		Lebensanzeige.setBackground(new Color(255, 255, 255));
-		Lebensanzeige.setBounds(414, 330, 60, 46);
+	
+		Lebensanzeige.setBounds(380, 289, 128, 128);
 		frame.getContentPane().add(Lebensanzeige);
+		Lebensanzeige.setIcon(new ImageIcon(this.getClass().getResource("/data/Lebensanzeige_Hintergrund.png")));
+		Lebensanzeige.setHorizontalTextPosition(JLabel.CENTER);
 		
 		//Hintergrund für Lebensanzeige(Herz)
-		JLabel Lebensanzeige_Hintergrund = new JLabel();
-		Lebensanzeige_Hintergrund.setIcon(new ImageIcon(this.getClass().getResource("/data/Lebensanzeige_Hintergrund.png")));
-		Lebensanzeige_Hintergrund.setBounds(380, 289, 128, 128);
-		frame.getContentPane().add(Lebensanzeige_Hintergrund);
+	
+		
+		
 		
 		
 		
@@ -93,33 +98,32 @@ public class Frame2 {
 		frame.getContentPane().add(Spieler2_Avatar_Lable);
 		
 		//Lebensanzeige für Gegneravatar
-		JLabel lblNewLabel = new JLabel("100");
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblNewLabel.setForeground(new Color(255, 255, 255));
-		lblNewLabel.setBounds(635, 174, 46, 14);
-		frame.getContentPane().add(lblNewLabel);
-		
-		//Hintergrund für Lebensanzeige(Herz)
-		JLabel Spieler2_Lebensanzeige_Hintergrund = new JLabel();
-		Spieler2_Lebensanzeige_Hintergrund.setIcon(new ImageIcon(this.getClass().getResource("/data/Lebensanzeige_Hintergrund.png")));
-		/*
-		ImageIcon Spieler2_Lebensanzeige_Hintergrund_resized = new ImageIcon();
-		Image img = Spieler2_Lebensanzeige_Hintergrund_resized.getImage(); 
-        Image newimg = img.getScaledInstance(Spieler2_Lebensanzeige_Hintergrund.getWidth(), Spieler2_Lebensanzeige_Hintergrund.getHeight(),  java.awt.Image.SCALE_SMOOTH);
-        Spieler2_Lebensanzeige_Hintergrund.setIcon(Spieler2_Lebensanzeige_Hintergrund_resized);
 	
-		 /* BufferedImage img = null;
+		JLabel Spieler2_Lebensanzeige = new JLabel("100");
+		Spieler2_Lebensanzeige.setHorizontalTextPosition(JLabel.CENTER);
+		Spieler2_Lebensanzeige.setBounds(728, 135, 64, 64);
+		Spieler2_Lebensanzeige.setForeground(new Color(255, 255, 255));
+		Spieler2_Lebensanzeige.setFont(new Font("Tahoma", Font.BOLD, 16));
+		
+		
+		//Passt die grösse des Bildes an die groesse des JLabels an
+	
+		BufferedImage img = null;
 		try {
-			img = ImageIO.read(new File("/data/Lebensanzeige_Hintergrund.png"));
+		    img = ImageIO.read(this.getClass().getResource("/data/Lebensanzeige_Hintergrund.png"));
+		    
 		} catch (IOException e) {
 		    e.printStackTrace();
 		}
-		Image dimg = img.getScaledInstance(Spieler2_Lebensanzeige_Hintergrund.getWidth(), Spieler2_Lebensanzeige_Hintergrund.getHeight(),
+		
+		Image dimg = img.getScaledInstance(Spieler2_Lebensanzeige.getWidth(), Spieler2_Lebensanzeige.getHeight(),
 		        Image.SCALE_SMOOTH);
-		ImageIcon Spieler2_Lebensanzeige_Hintergrund_resized = new ImageIcon(dimg);
-		*/
-		Spieler2_Lebensanzeige_Hintergrund.setBounds(728, 135, 64, 64);
-		frame.getContentPane().add(Spieler2_Lebensanzeige_Hintergrund);
+		
+		ImageIcon imageIcon = new ImageIcon(dimg);
+		Spieler2_Lebensanzeige.setIcon(imageIcon);
+		
+		
+		frame.getContentPane().add(Spieler2_Lebensanzeige);
 		
 		
 		
