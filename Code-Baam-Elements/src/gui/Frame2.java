@@ -14,6 +14,15 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+
+/**
+ * 
+ * @author Simon Jaeggi, Lukas Reinhardt
+ * Die Klasse ist die Oberflaeche des Spiels, hier werden saemtliche Kampfhandlungen vollzogen.
+ */
 
 public class Frame2 {
 
@@ -63,9 +72,13 @@ public class Frame2 {
 	//Spieler1:
 		//Button Schlag
 		JButton btnNewButton = new JButton("Schlag");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnNewButton.setBackground(new Color(255, 255, 255));
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 35));
-		btnNewButton.setBounds(54, 525, 256, 51);
+		btnNewButton.setBounds(70, 524, 256, 51);
 		frame.getContentPane().add(btnNewButton);
 		
 		//Bild für Avatar
@@ -97,6 +110,19 @@ public class Frame2 {
 		Spieler2_Avatar_Lable.setBounds(824, 105, 128, 128);
 		frame.getContentPane().add(Spieler2_Avatar_Lable);
 		
+		BufferedImage imgA = null;
+		try {
+		    imgA = ImageIO.read(this.getClass().getResource("/data/Wasser_Avatar.png"));
+		    
+		} catch (IOException e) {
+		    e.printStackTrace();
+		}
+		Image dimgA = imgA.getScaledInstance(Spieler2_Avatar_Lable.getWidth(), Spieler2_Avatar_Lable.getHeight(),
+		        Image.SCALE_SMOOTH);
+		
+		ImageIcon imageIconA = new ImageIcon(dimgA);
+		Spieler2_Avatar_Lable.setIcon(imageIconA);
+		
 		//Lebensanzeige für Gegneravatar
 	
 		JLabel Spieler2_Lebensanzeige = new JLabel("100");
@@ -106,7 +132,7 @@ public class Frame2 {
 		Spieler2_Lebensanzeige.setFont(new Font("Tahoma", Font.BOLD, 16));
 		
 		
-		//Passt die grösse des Bildes an die groesse des JLabels an
+		//Passt die groesse des Bildes an die groesse des JLabels an
 	
 		BufferedImage img = null;
 		try {

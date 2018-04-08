@@ -15,7 +15,7 @@ import java.awt.Color;
 /**
  * 
  * @author Simon Jaeggi, Lukas Reinhardt
- * Die Klasse ist die Start-Oberfläche des Spiels, der Eigene Avatar kann hier ausgewählt werden.
+ * Die Klasse ist die Start-Oberfläche des Spiels, der Eigene Avatar kann hier ausgewaehlt werden.
  */
 
 
@@ -104,7 +104,7 @@ public class Frame1 {
 		LuftElementar.setBounds(838, 451, 261, 73);
 		frame.getContentPane().add(LuftElementar);
 	
-		//Button Zufälliger Avatar auswählen
+		//Button Zufaelliger Avatar auswaehlen
 		JButton RandomAvatar = new JButton("Zufalls Avatar");
 		RandomAvatar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -117,7 +117,7 @@ public class Frame1 {
 		RandomAvatar.setBounds(453, 383, 215, 57);
 		frame.getContentPane().add(RandomAvatar);
 		
-		//Titel "Wähle deinen Avatar"
+		//Titel "Wahhle deinen Avatar"
 		JLabel lblWhleDeinenAvatar = new JLabel("W\u00E4hle deinen Avatar:");
 		lblWhleDeinenAvatar.setForeground(new Color(230, 230, 250));
 		lblWhleDeinenAvatar.setFont(new Font("Tahoma", Font.PLAIN, 75));
