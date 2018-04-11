@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 
 import java.awt.Font;
 import java.awt.Color;
+import logic.*;
 
 /**
  * 
@@ -60,6 +61,10 @@ public class Frame1 {
 		JButton FeuerElementar = new JButton("Feuer");
 		FeuerElementar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+			
+				Avatar Spieler = new Feuerelementar();	
+				Kampf k = new Kampf(Spieler, AA.RandomAvatar());
+
 			}
 		});
 		FeuerElementar.setForeground(new Color(255, 255, 255));
@@ -108,7 +113,12 @@ public class Frame1 {
 		JButton RandomAvatar = new JButton("Zufalls Avatar");
 		RandomAvatar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("ZUFALLL");
+				/*Avatar Spieler = new AuswahlAvatar(RandomAvatar);		
+				Kampf k = new Kampf(Spieler, AA.RandomAvatar())
+						Frame2 newFrame = new Frame2();
+				newFrame.setVisible(true);
+				*/
+
 			}
 		});
 		RandomAvatar.setForeground(Color.WHITE);
@@ -118,7 +128,7 @@ public class Frame1 {
 		frame.getContentPane().add(RandomAvatar);
 		
 		//Titel "Wahhle deinen Avatar"
-		JLabel lblWhleDeinenAvatar = new JLabel("W\u00E4hle deinen Avatar:");
+		JLabel lblWhleDeinenAvatar = new JLabel("Waehele deinen Avatar:");
 		lblWhleDeinenAvatar.setForeground(new Color(230, 230, 250));
 		lblWhleDeinenAvatar.setFont(new Font("Tahoma", Font.PLAIN, 75));
 		lblWhleDeinenAvatar.setBounds(197, 170, 721, 91);
