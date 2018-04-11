@@ -21,7 +21,7 @@ import logic.*;
 
 
 public class Frame1 {
-
+	private AuswahlAvatar AA = new AuswahlAvatar();
 	private JFrame frame;
 
 	/**
@@ -61,9 +61,13 @@ public class Frame1 {
 		JButton FeuerElementar = new JButton("Feuer");
 		FeuerElementar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			
+				
 				Avatar Spieler = new Feuerelementar();	
 				Kampf k = new Kampf(Spieler, AA.RandomAvatar());
+				Frame2 F2 = new Frame2();
+				
+				frame.dispose();
+				
 
 			}
 		});
@@ -77,6 +81,11 @@ public class Frame1 {
 		JButton WasserElementar = new JButton("Wasser");
 		WasserElementar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Avatar Spieler = new Wasserelementar();	
+				Kampf k = new Kampf(Spieler, AA.RandomAvatar());
+				Frame2 F2 = new Frame2();
+				
+				frame.dispose();
 			}
 		});
 		WasserElementar.setForeground(new Color(255, 255, 255));
@@ -89,6 +98,11 @@ public class Frame1 {
 		JButton ErdElementar = new JButton("Erde");
 		ErdElementar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Avatar Spieler = new Erdelementar();	
+				Kampf k = new Kampf(Spieler, AA.RandomAvatar());
+				Frame2 F2 = new Frame2();
+				
+				frame.dispose();
 			}
 		});
 		ErdElementar.setForeground(new Color(255, 255, 255));
@@ -104,6 +118,11 @@ public class Frame1 {
 		LuftElementar.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		LuftElementar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				Avatar Spieler = new Luftelementar();	
+				Kampf k = new Kampf(Spieler, AA.RandomAvatar());
+				Frame2 F2 = new Frame2();
+				
+				frame.dispose();
 			}
 		});
 		LuftElementar.setBounds(838, 451, 261, 73);
@@ -113,11 +132,11 @@ public class Frame1 {
 		JButton RandomAvatar = new JButton("Zufalls Avatar");
 		RandomAvatar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				/*Avatar Spieler = new AuswahlAvatar(RandomAvatar);		
-				Kampf k = new Kampf(Spieler, AA.RandomAvatar())
-						Frame2 newFrame = new Frame2();
-				newFrame.setVisible(true);
-				*/
+				
+				Kampf k = new Kampf(AA.RandomAvatar(), AA.RandomAvatar());
+				Frame2 F2 = new Frame2();
+				
+				frame.dispose();
 
 			}
 		});
@@ -128,9 +147,9 @@ public class Frame1 {
 		frame.getContentPane().add(RandomAvatar);
 		
 		//Titel "Wahhle deinen Avatar"
-		JLabel lblWhleDeinenAvatar = new JLabel("Waehele deinen Avatar:");
+		JLabel lblWhleDeinenAvatar = new JLabel("Waehle deinen Avatar:");
 		lblWhleDeinenAvatar.setForeground(new Color(230, 230, 250));
-		lblWhleDeinenAvatar.setFont(new Font("Tahoma", Font.PLAIN, 75));
+		lblWhleDeinenAvatar.setFont(new Font("Tahoma", Font.PLAIN, 70));
 		lblWhleDeinenAvatar.setBounds(197, 170, 721, 91);
 		frame.getContentPane().add(lblWhleDeinenAvatar);
 		

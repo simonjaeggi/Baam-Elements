@@ -60,7 +60,7 @@ public class Frame2 {
 		frame.setBounds(100, 100,  1137, 667);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
+		frame.setVisible(true);
 		
 		//Titel
 		JLabel lblKampf = new JLabel("Kampf");
