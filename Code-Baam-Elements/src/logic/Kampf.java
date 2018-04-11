@@ -55,9 +55,9 @@ public class Kampf {
 	 * @return
 	 * Hier wird bei einem Avatar ueberprueft, ob er gestorben ist.
 	 */
-	private boolean gestorben(Avatar avatar){
+	public boolean gestorben(Avatar avatar){
 
-		if (avatar.getLebenspunkte() <= 1){
+		if (avatar.getLebenspunkte() <= 0){
 			return true;
 		}
 		return false;
@@ -67,13 +67,11 @@ public class Kampf {
 	 */
 	private void gewonnen(){
 		System.out.println("Yaay, you won!");
-		System.exit(0);
 	}
 	/**
 	 * Diese Methode wird aufgerufen, wenn der Spieler verloren hat. Eine entsprechende Meldung wird ausgegeben.
 	 */
 	private void verloren(){
 		System.out.println("Awww, you lost!");
-		System.exit(0);
 	}
 }
