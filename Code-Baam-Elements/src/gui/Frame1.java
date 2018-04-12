@@ -20,9 +20,19 @@ import logic.*;
  */
 
 
+
 public class Frame1 {
 	private AuswahlAvatar AA = new AuswahlAvatar();
 	private JFrame frame;
+	private Avatar Avatar_1;
+	private Avatar Avatar_2;
+	public Avatar getAvatar_1() {
+		return Avatar_1;
+	}
+
+	public Avatar getAvatar_2() {
+		return Avatar_2;
+	}
 
 	/**
 	 * Launch the application.

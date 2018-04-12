@@ -2,6 +2,7 @@ package gui;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+
 import java.awt.Color;
 
 import javax.imageio.ImageIO;
@@ -9,6 +10,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
@@ -16,6 +18,8 @@ import java.io.File;
 import java.io.IOException;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
+import logic.Avatar;
 
 
 /**
@@ -27,7 +31,8 @@ import java.awt.event.ActionEvent;
 public class Frame2 {
 
 	private JFrame frame;
-
+	private Avatar Avatar_1;
+	private Avatar Avatar_2;
 	/**
 	 * Launch the application.
 	 */
@@ -62,6 +67,9 @@ public class Frame2 {
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
 		
+		
+		
+		
 		//Titel
 		JLabel lblKampf = new JLabel("Kampf");
 		lblKampf.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 70));
@@ -70,16 +78,6 @@ public class Frame2 {
 		frame.getContentPane().add(lblKampf);
 		
 	//Spieler1:
-		//Button Schlag
-		JButton btnNewButton = new JButton("Schlag");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnNewButton.setBackground(new Color(255, 255, 255));
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 35));
-		btnNewButton.setBounds(70, 524, 256, 51);
-		frame.getContentPane().add(btnNewButton);
 		
 		//Bild für Avatar
 		JLabel Spieler_Avatar_Lable = new JLabel();
@@ -151,6 +149,16 @@ public class Frame2 {
 		
 		frame.getContentPane().add(Spieler2_Lebensanzeige);
 		
+		//Button Schlag
+		JButton btnNewButton = new JButton("Schlag");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnNewButton.setBackground(new Color(255, 255, 255));
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 35));
+		btnNewButton.setBounds(70, 524, 256, 51);
+		frame.getContentPane().add(btnNewButton);
 		
 		
 	}
