@@ -5,7 +5,7 @@ import javax.swing.JFrame;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JPanel;
+
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -56,7 +56,7 @@ public class Frame1 {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame("Wähle deinen Kämpfer");
+		frame = new JFrame("Waehle deinen Kaempfer");
 		frame.getContentPane().setBackground(Color.BLACK);
 		frame.setBounds(100, 100, 1137, 667);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -70,7 +70,7 @@ public class Frame1 {
 				Avatar_1 = new Feuerelementar();
 				Avatar_2 = AA.RandomAvatar();
 				
-				Frame2 F2 = new Frame2(Avatar_1, Avatar_2);
+				new Frame2(Avatar_1, Avatar_2);
 
 				frame.dispose();
 
@@ -89,7 +89,7 @@ public class Frame1 {
 			public void actionPerformed(ActionEvent e) {
 				Avatar_1 = new Wasserelementar();
 				Avatar_2 = AA.RandomAvatar();
-				Frame2 F2 = new Frame2(Avatar_1, Avatar_2);
+				new Frame2(Avatar_1, Avatar_2);
 
 				frame.dispose();
 			}
@@ -106,7 +106,7 @@ public class Frame1 {
 			public void actionPerformed(ActionEvent e) {
 				Avatar_1 = new Erdelementar();
 				Avatar_2 = AA.RandomAvatar();
-				Frame2 F2 = new Frame2(Avatar_1, Avatar_2);
+				new Frame2(Avatar_1, Avatar_2);
 
 				frame.dispose();
 			}
@@ -126,7 +126,7 @@ public class Frame1 {
 			public void actionPerformed(ActionEvent arg0) {
 				Avatar_1 = new Luftelementar();
 				Avatar_2 = AA.RandomAvatar();
-				Frame2 F2 = new Frame2(Avatar_1, Avatar_2);
+				new Frame2(Avatar_1, Avatar_2);
 
 				frame.dispose();
 			}
@@ -141,7 +141,7 @@ public class Frame1 {
 
 				Avatar_1 = AA.RandomAvatar();
 				Avatar_2 = AA.RandomAvatar();
-				Frame2 F2 = new Frame2(Avatar_1, Avatar_2);
+				new Frame2(Avatar_1, Avatar_2);
 
 				frame.dispose();
 

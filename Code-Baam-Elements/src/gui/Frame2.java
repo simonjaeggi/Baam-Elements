@@ -1,12 +1,12 @@
 package gui;
-import java.awt.EventQueue;
+
 
 import javax.swing.JFrame;
 
 import java.awt.Color;
 
 import javax.imageio.ImageIO;
-import javax.swing.Icon;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -14,7 +14,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
-import java.io.File;
+
 import java.io.IOException;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -35,7 +35,6 @@ public class Frame2 {
 	private Avatar Avatar_1;
 	private Avatar Avatar_2;
 	private Kampf k;
-	private Frame1 F1 = new Frame1();
 	private int RoundedUp_1;
 	private int RoundedUp_2;
 
@@ -44,11 +43,12 @@ public class Frame2 {
 	 * Create the application.
 	 */
 	public Frame2(Avatar Avatar_1, Avatar Avatar_2) {
-		initialize();
 		this.Avatar_1 = Avatar_1;
 		this.Avatar_2 = Avatar_2;
+		initialize();
 
 		k = new Kampf(this.Avatar_1, this.Avatar_2);
+
 	}
 
 	/**
@@ -82,7 +82,9 @@ public class Frame2 {
 		frame.getContentPane().add(Spieler_Avatar_Lable);
 
 		//Lebensanzeige
+		
 		RoundedUp_1 = (int) Math.ceil(Avatar_1.getLebenspunkte());
+		
 		JLabel Lebensanzeige = new JLabel(Integer.toString((RoundedUp_1)));
 		Lebensanzeige.setFont(new Font("Tahoma", Font.BOLD, 32));
 		Lebensanzeige.setForeground(new Color(255, 255, 255));
@@ -120,6 +122,7 @@ public class Frame2 {
 
 		//Lebensanzeige für Gegneravatar
 		RoundedUp_2 = (int) Math.ceil(Avatar_2.getLebenspunkte());
+		
 		JLabel Spieler2_Lebensanzeige = new JLabel(Integer.toString((RoundedUp_2)));
 		Spieler2_Lebensanzeige.setHorizontalTextPosition(JLabel.CENTER);
 		Spieler2_Lebensanzeige.setBounds(728, 135, 64, 64);
@@ -148,9 +151,11 @@ public class Frame2 {
 
 		//Button Schlag
 		JButton btnNewButton = new JButton("Schlag");
+		
 		btnNewButton.addActionListener(new ActionListener() {
+			
 			public void actionPerformed(ActionEvent e) {
-
+				
 				RoundedUp_1 = (int) Math.ceil(Avatar_1.getLebenspunkte());
 				Lebensanzeige.setText(Integer.toString((RoundedUp_1)));
 
@@ -167,6 +172,7 @@ public class Frame2 {
 
 			}
 		});
+		
 		btnNewButton.setBackground(new Color(255, 255, 255));
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 35));
 		btnNewButton.setBounds(70, 524, 256, 51);
