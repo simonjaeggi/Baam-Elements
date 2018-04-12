@@ -11,6 +11,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
+import data.FileLocations;
+
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
@@ -37,7 +39,7 @@ public class Frame2 {
 	private Kampf k;
 	private int RoundedUp_1;
 	private int RoundedUp_2;
-
+	private FileLocations FL = new FileLocations();
 
 	/**
 	 * Create the application.
@@ -77,7 +79,7 @@ public class Frame2 {
 
 		//Bild für Avatar
 		JLabel Spieler_Avatar_Lable = new JLabel();
-		Spieler_Avatar_Lable.setIcon(new ImageIcon(this.getClass().getResource("/data/Feuer_Avatar.png")));
+		Spieler_Avatar_Lable.setIcon(new ImageIcon(this.getClass().getResource(FL.getAvatarImage(Avatar_1))));
 		Spieler_Avatar_Lable.setBounds(54, 225, 256, 256);
 		frame.getContentPane().add(Spieler_Avatar_Lable);
 
@@ -91,7 +93,7 @@ public class Frame2 {
 
 		Lebensanzeige.setBounds(380, 289, 128, 128);
 		frame.getContentPane().add(Lebensanzeige);
-		Lebensanzeige.setIcon(new ImageIcon(this.getClass().getResource("/data/Lebensanzeige_Hintergrund.png")));
+		Lebensanzeige.setIcon(new ImageIcon(this.getClass().getResource(FL.getHPImage())));
 		Lebensanzeige.setHorizontalTextPosition(JLabel.CENTER);
 
 		//Hintergrund für Lebensanzeige(Herz)
@@ -109,7 +111,7 @@ public class Frame2 {
 
 		BufferedImage imgA = null;
 		try {
-			imgA = ImageIO.read(this.getClass().getResource("/data/Wasser_Avatar.png"));
+			imgA = ImageIO.read(this.getClass().getResource(FL.getAvatarImage(Avatar_2)));
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -134,7 +136,7 @@ public class Frame2 {
 
 		BufferedImage img = null;
 		try {
-			img = ImageIO.read(this.getClass().getResource("/data/Lebensanzeige_Hintergrund.png"));
+			img = ImageIO.read(this.getClass().getResource(FL.getHPImage()));
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -169,6 +171,8 @@ public class Frame2 {
 
 				RoundedUp_2 = (int) Math.ceil(Avatar_2.getLebenspunkte());
 				Spieler2_Lebensanzeige.setText(Integer.toString((RoundedUp_2)));
+				
+				
 
 			}
 		});

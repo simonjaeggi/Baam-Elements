@@ -14,15 +14,7 @@ public class test {
 		s.kaempfen();
 		s.kaempfen();
 		s.kaempfen();
-		s.kaempfen();
-		s.kaempfen();
-		s.kaempfen();
-		s.kaempfen();
-		s.kaempfen();
-		s.kaempfen();
-		s.kaempfen();
-		s.kaempfen();
-		s.kaempfen();
+	
 		
 		
 
