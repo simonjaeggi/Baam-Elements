@@ -163,9 +163,9 @@ public class Frame2 {
 
 				RoundedUp_2 = (int) Math.ceil(Avatar_2.getLebenspunkte());
 				Spieler2_Lebensanzeige.setText(Integer.toString((RoundedUp_2)));
-
+				if(k.gestorben(Avatar_1) == false && k.gestorben(Avatar_2) == false) {
 				k.kaempfen();
-
+				}
 				RoundedUp_1 = (int) Math.ceil(Avatar_1.getLebenspunkte());
 				Lebensanzeige.setText(Integer.toString((RoundedUp_1)));
 
