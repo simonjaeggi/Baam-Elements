@@ -20,6 +20,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 import logic.Avatar;
+import logic.Kampf;
 
 
 /**
@@ -33,133 +34,144 @@ public class Frame2 {
 	private JFrame frame;
 	private Avatar Avatar_1;
 	private Avatar Avatar_2;
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Frame2 window = new Frame2();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	private Kampf k;
+	private Frame1 F1 = new Frame1();
+	private int RoundedUp_1;
+	private int RoundedUp_2;
+
 
 	/**
 	 * Create the application.
 	 */
-	public Frame2() {
+	public Frame2(Avatar Avatar_1, Avatar Avatar_2) {
 		initialize();
+		this.Avatar_1 = Avatar_1;
+		this.Avatar_2 = Avatar_2;
+
+		k = new Kampf(this.Avatar_1, this.Avatar_2);
 	}
 
 	/**
 	 * Inizialisierung des Frames
 	 */
 	private void initialize() {
+		
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(0, 0, 0));
 		frame.setBounds(100, 100,  1137, 667);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
-		
-		
-		
-		
+
+
+
+
 		//Titel
 		JLabel lblKampf = new JLabel("Kampf");
 		lblKampf.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 70));
 		lblKampf.setForeground(new Color(255, 255, 255));
 		lblKampf.setBounds(54, 34, 546, 109);
 		frame.getContentPane().add(lblKampf);
-		
-	//Spieler1:
-		
+
+		//Spieler1:
+
 		//Bild für Avatar
 		JLabel Spieler_Avatar_Lable = new JLabel();
 		Spieler_Avatar_Lable.setIcon(new ImageIcon(this.getClass().getResource("/data/Feuer_Avatar.png")));
 		Spieler_Avatar_Lable.setBounds(54, 225, 256, 256);
 		frame.getContentPane().add(Spieler_Avatar_Lable);
-		
+
 		//Lebensanzeige
-		JLabel Lebensanzeige = new JLabel("100");
+		RoundedUp_1 = (int) Math.ceil(Avatar_1.getLebenspunkte());
+		JLabel Lebensanzeige = new JLabel(Integer.toString((RoundedUp_1)));
 		Lebensanzeige.setFont(new Font("Tahoma", Font.BOLD, 32));
 		Lebensanzeige.setForeground(new Color(255, 255, 255));
-	
+
 		Lebensanzeige.setBounds(380, 289, 128, 128);
 		frame.getContentPane().add(Lebensanzeige);
 		Lebensanzeige.setIcon(new ImageIcon(this.getClass().getResource("/data/Lebensanzeige_Hintergrund.png")));
 		Lebensanzeige.setHorizontalTextPosition(JLabel.CENTER);
-		
+
 		//Hintergrund für Lebensanzeige(Herz)
-	
-		
-		
-		
-		
-		
-	//Spieler2:
+
+
+
+
+
+
+		//Spieler2:
 		//Bild für Gegnerischen Avatar
 		JLabel Spieler2_Avatar_Lable = new JLabel("");
 		Spieler2_Avatar_Lable.setBounds(824, 105, 128, 128);
 		frame.getContentPane().add(Spieler2_Avatar_Lable);
-		
+
 		BufferedImage imgA = null;
 		try {
-		    imgA = ImageIO.read(this.getClass().getResource("/data/Wasser_Avatar.png"));
-		    
+			imgA = ImageIO.read(this.getClass().getResource("/data/Wasser_Avatar.png"));
+
 		} catch (IOException e) {
-		    e.printStackTrace();
+			e.printStackTrace();
 		}
 		Image dimgA = imgA.getScaledInstance(Spieler2_Avatar_Lable.getWidth(), Spieler2_Avatar_Lable.getHeight(),
-		        Image.SCALE_SMOOTH);
-		
+				Image.SCALE_SMOOTH);
+
 		ImageIcon imageIconA = new ImageIcon(dimgA);
 		Spieler2_Avatar_Lable.setIcon(imageIconA);
-		
+
 		//Lebensanzeige für Gegneravatar
-	
-		JLabel Spieler2_Lebensanzeige = new JLabel("100");
+		RoundedUp_2 = (int) Math.ceil(Avatar_2.getLebenspunkte());
+		JLabel Spieler2_Lebensanzeige = new JLabel(Integer.toString((RoundedUp_2)));
 		Spieler2_Lebensanzeige.setHorizontalTextPosition(JLabel.CENTER);
 		Spieler2_Lebensanzeige.setBounds(728, 135, 64, 64);
 		Spieler2_Lebensanzeige.setForeground(new Color(255, 255, 255));
 		Spieler2_Lebensanzeige.setFont(new Font("Tahoma", Font.BOLD, 16));
-		
-		
+
+
 		//Passt die groesse des Bildes an die groesse des JLabels an
-	
+
 		BufferedImage img = null;
 		try {
-		    img = ImageIO.read(this.getClass().getResource("/data/Lebensanzeige_Hintergrund.png"));
-		    
+			img = ImageIO.read(this.getClass().getResource("/data/Lebensanzeige_Hintergrund.png"));
+
 		} catch (IOException e) {
-		    e.printStackTrace();
+			e.printStackTrace();
 		}
-		
+
 		Image dimg = img.getScaledInstance(Spieler2_Lebensanzeige.getWidth(), Spieler2_Lebensanzeige.getHeight(),
-		        Image.SCALE_SMOOTH);
-		
+				Image.SCALE_SMOOTH);
+
 		ImageIcon imageIcon = new ImageIcon(dimg);
 		Spieler2_Lebensanzeige.setIcon(imageIcon);
-		
-		
+
+
 		frame.getContentPane().add(Spieler2_Lebensanzeige);
-		
+
 		//Button Schlag
 		JButton btnNewButton = new JButton("Schlag");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
+				RoundedUp_1 = (int) Math.ceil(Avatar_1.getLebenspunkte());
+				Lebensanzeige.setText(Integer.toString((RoundedUp_1)));
+
+				RoundedUp_2 = (int) Math.ceil(Avatar_2.getLebenspunkte());
+				Spieler2_Lebensanzeige.setText(Integer.toString((RoundedUp_2)));
+
+				k.kaempfen();
+
+				RoundedUp_1 = (int) Math.ceil(Avatar_1.getLebenspunkte());
+				Lebensanzeige.setText(Integer.toString((RoundedUp_1)));
+
+				RoundedUp_2 = (int) Math.ceil(Avatar_2.getLebenspunkte());
+				Spieler2_Lebensanzeige.setText(Integer.toString((RoundedUp_2)));
+
 			}
 		});
 		btnNewButton.setBackground(new Color(255, 255, 255));
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 35));
 		btnNewButton.setBounds(70, 524, 256, 51);
 		frame.getContentPane().add(btnNewButton);
-		
-		
+
+
 	}
 }
