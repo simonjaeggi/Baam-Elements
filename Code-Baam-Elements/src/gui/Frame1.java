@@ -58,7 +58,7 @@ public class Frame1 {
 	private void initialize() {
 		frame = new JFrame("Waehle deinen Kaempfer");
 		frame.getContentPane().setBackground(Color.BLACK);
-		frame.setBounds(100, 100, 1137, 667);
+		frame.setBounds(100, 100,  1060, 666);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
@@ -81,7 +81,7 @@ public class Frame1 {
 		FeuerElementar.setForeground(new Color(255, 255, 255));
 		FeuerElementar.setBackground(new Color(128, 0, 0));
 		FeuerElementar.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		FeuerElementar.setBounds(10, 451, 261, 73);
+		FeuerElementar.setBounds(16, 451, 240, 73);
 		frame.getContentPane().add(FeuerElementar);
 
 		//Button Wasseravatar
@@ -99,7 +99,7 @@ public class Frame1 {
 		WasserElementar.setForeground(new Color(255, 255, 255));
 		WasserElementar.setBackground(new Color(0, 0, 255));
 		WasserElementar.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		WasserElementar.setBounds(286, 451, 261, 73);
+		WasserElementar.setBounds(272, 451, 240, 73);
 		frame.getContentPane().add(WasserElementar);
 
 		//Button Erdavatar
@@ -117,7 +117,7 @@ public class Frame1 {
 		ErdElementar.setForeground(new Color(255, 255, 255));
 		ErdElementar.setBackground(new Color(153, 102, 0));
 		ErdElementar.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		ErdElementar.setBounds(562, 451, 261, 73);
+		ErdElementar.setBounds(528, 451, 240, 73);
 		frame.getContentPane().add(ErdElementar);
 
 		//Button Luftavatar
@@ -136,7 +136,7 @@ public class Frame1 {
 				frame.dispose();
 			}
 		});
-		LuftElementar.setBounds(838, 451, 261, 73);
+		LuftElementar.setBounds(784, 451, 240, 73);
 		frame.getContentPane().add(LuftElementar);
 
 		//Button Zufaelliger Avatar auswaehlen
@@ -157,14 +157,14 @@ public class Frame1 {
 		RandomAvatar.setForeground(Color.WHITE);
 		RandomAvatar.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		RandomAvatar.setBackground(new Color(255, 0, 255));
-		RandomAvatar.setBounds(453, 383, 215, 57);
+		RandomAvatar.setBounds(414, 383, 215, 57);
 		frame.getContentPane().add(RandomAvatar);
 
 		//Titel "Waehle deinen Avatar"
 		JLabel lblWhleDeinenAvatar = new JLabel("Waehle deinen Avatar:");
 		lblWhleDeinenAvatar.setForeground(new Color(230, 230, 250));
 		lblWhleDeinenAvatar.setFont(new Font("Tahoma", Font.PLAIN, 70));
-		lblWhleDeinenAvatar.setBounds(197, 170, 721, 91);
+		lblWhleDeinenAvatar.setBounds(161, 170, 721, 91);
 		frame.getContentPane().add(lblWhleDeinenAvatar);
 
 		//helpbox
@@ -176,7 +176,7 @@ public class Frame1 {
 			}
 		});
 		help.setFont(new Font("Tahoma", Font.BOLD, 19));
-		help.setBounds(21, 11, 48, 43);
+		help.setBounds(10, 11, 48, 43);
 		frame.getContentPane().add(help);
 
 

@@ -60,7 +60,7 @@ public class Frame2 {
 		
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(0, 0, 0));
-		frame.setBounds(100, 100,  1137, 667);
+		frame.setBounds(100, 100,  1060, 666);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
@@ -106,7 +106,7 @@ public class Frame2 {
 		//Spieler2:
 		//Bild für Gegnerischen Avatar
 		JLabel Spieler2_Avatar_Lable = new JLabel("");
-		Spieler2_Avatar_Lable.setBounds(824, 105, 128, 128);
+		Spieler2_Avatar_Lable.setBounds(863, 83, 128, 128);
 		frame.getContentPane().add(Spieler2_Avatar_Lable);
 
 		BufferedImage imgA = null;
@@ -127,7 +127,7 @@ public class Frame2 {
 		
 		JLabel Spieler2_Lebensanzeige = new JLabel(Integer.toString((RoundedUp_2)));
 		Spieler2_Lebensanzeige.setHorizontalTextPosition(JLabel.CENTER);
-		Spieler2_Lebensanzeige.setBounds(728, 135, 64, 64);
+		Spieler2_Lebensanzeige.setBounds(767, 113, 64, 64);
 		Spieler2_Lebensanzeige.setForeground(new Color(255, 255, 255));
 		Spieler2_Lebensanzeige.setFont(new Font("Tahoma", Font.BOLD, 16));
 
