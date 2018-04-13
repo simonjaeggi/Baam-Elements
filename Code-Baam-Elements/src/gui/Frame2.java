@@ -9,6 +9,7 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.border.LineBorder;
 
 import data.FileLocations;
@@ -24,6 +25,10 @@ import logic.Avatar;
 import logic.Kampf;
 import javax.swing.border.Border;
 import javax.swing.SwingConstants;
+import javax.swing.JPopupMenu;
+import java.awt.Component;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 
 /**
@@ -65,6 +70,8 @@ public class Frame2 {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
+		
+		
 
 
 
@@ -168,6 +175,19 @@ public class Frame2 {
 
 		frame.getContentPane().add(Spieler2_Lebensanzeige);
 
+		//Button playAgain
+		JButton playAgain = new JButton("Play Again!");
+		playAgain.addActionListener(new ActionListener() {
+			Frame1 F1 = new Frame1();
+
+	
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			
+		}
 		//Button Schlag
 		JButton btnNewButton = new JButton("Schlag");
 		btnNewButton.setFocusPainted(false);
@@ -191,8 +211,13 @@ public class Frame2 {
 
 				RoundedUp_2 = (int) Math.ceil(Avatar_2.getLebenspunkte());
 				Spieler2_Lebensanzeige.setText(Integer.toString((RoundedUp_2)));
-				
+				if(k.gestorben(Avatar_1) == true) {
+					JOptionPane.showMessageDialog(playAgain,  "AWWWWWWWW YOU LOST");
 
+				}else if(k.gestorben(Avatar_2) == true){
+					
+				}
+				
 
 			}
 		});
@@ -204,5 +229,22 @@ public class Frame2 {
 
 
 
+	}
+	private static void addPopup(Component component, final JPopupMenu popup) {
+		component.addMouseListener(new MouseAdapter() {
+			public void mousePressed(MouseEvent e) {
+				if (e.isPopupTrigger()) {
+					showMenu(e);
+				}
+			}
+			public void mouseReleased(MouseEvent e) {
+				if (e.isPopupTrigger()) {
+					showMenu(e);
+				}
+			}
+			private void showMenu(MouseEvent e) {
+				popup.show(e.getComponent(), e.getX(), e.getY());
+			}
+		});
 	}
 }
