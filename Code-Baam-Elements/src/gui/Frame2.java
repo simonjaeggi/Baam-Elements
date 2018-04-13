@@ -6,23 +6,23 @@ import javax.swing.JFrame;
 import java.awt.Color;
 
 import javax.imageio.ImageIO;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.border.LineBorder;
 
 import data.FileLocations;
 
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
-
 import java.io.IOException;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 import logic.Avatar;
 import logic.Kampf;
+import javax.swing.border.Border;
 
 
 /**
@@ -154,6 +154,8 @@ public class Frame2 {
 		//Button Schlag
 		JButton btnNewButton = new JButton("Schlag");
 		btnNewButton.setFocusPainted(false);
+
+
 		btnNewButton.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
@@ -178,8 +180,8 @@ public class Frame2 {
 		});
 		
 		btnNewButton.setBackground(new Color(255, 255, 255));
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 35));
-		btnNewButton.setBounds(70, 524, 256, 51);
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 32));
+		btnNewButton.setBounds(70, 524, 230, 45);
 		frame.getContentPane().add(btnNewButton);
 
 
