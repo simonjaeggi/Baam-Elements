@@ -64,6 +64,7 @@ public class Frame1 {
 
 		//Button Feueravatar
 		JButton FeuerElementar = new JButton("Feuer");
+		FeuerElementar.setFocusPainted(false);
 		FeuerElementar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -85,6 +86,7 @@ public class Frame1 {
 
 		//Button Wasseravatar
 		JButton WasserElementar = new JButton("Wasser");
+		WasserElementar.setFocusPainted(false);
 		WasserElementar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Avatar_1 = new Wasserelementar();
@@ -102,6 +104,7 @@ public class Frame1 {
 
 		//Button Erdavatar
 		JButton ErdElementar = new JButton("Erde");
+		ErdElementar.setFocusPainted(false);
 		ErdElementar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Avatar_1 = new Erdelementar();
@@ -119,6 +122,8 @@ public class Frame1 {
 
 		//Button Luftavatar
 		JButton LuftElementar = new JButton("Luft");
+		LuftElementar.setFocusPainted(false);
+
 		LuftElementar.setBackground(new Color(135, 206, 235));
 		LuftElementar.setForeground(new Color(255, 255, 255));
 		LuftElementar.setFont(new Font("Tahoma", Font.PLAIN, 18));
@@ -136,6 +141,8 @@ public class Frame1 {
 
 		//Button Zufaelliger Avatar auswaehlen
 		JButton RandomAvatar = new JButton("Zufalls Avatar");
+		RandomAvatar.setFocusPainted(false);
+
 		RandomAvatar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -162,6 +169,7 @@ public class Frame1 {
 
 		//helpbox
 		JButton help = new JButton("?");
+		help.setFocusPainted(false);
 		help.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(null, "Waehle den Avatar aus mit dem du dich ins Gefecht stuerzen moechtest!");

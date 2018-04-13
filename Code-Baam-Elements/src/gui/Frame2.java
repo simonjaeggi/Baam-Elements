@@ -153,7 +153,7 @@ public class Frame2 {
 
 		//Button Schlag
 		JButton btnNewButton = new JButton("Schlag");
-		
+		btnNewButton.setFocusPainted(false);
 		btnNewButton.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
