@@ -16,7 +16,7 @@ import logic.*;
 /**
  * 
  * @author Simon Jaeggi, Lukas Reinhardt
- * Die Klasse ist die Start-Oberflaeche des Spiels, der Eigene Avatar kann hier ausgewaehlt werden.
+ * Die Klasse funktionier als die Start-Oberflaeche des Spiels, der Eigene Avatar kann hier ausgewaehlt werden.
  */
 
 
