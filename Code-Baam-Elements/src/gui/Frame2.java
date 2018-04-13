@@ -23,6 +23,7 @@ import java.awt.event.ActionEvent;
 import logic.Avatar;
 import logic.Kampf;
 import javax.swing.border.Border;
+import javax.swing.SwingConstants;
 
 
 /**
@@ -57,7 +58,7 @@ public class Frame2 {
 	 * Inizialisierung des Frames
 	 */
 	private void initialize() {
-		
+
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(0, 0, 0));
 		frame.setBounds(100, 100,  1060, 666);
@@ -70,28 +71,35 @@ public class Frame2 {
 
 		//Titel
 		JLabel lblKampf = new JLabel("Kampf");
-		lblKampf.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 70));
+		lblKampf.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 60));
 		lblKampf.setForeground(new Color(255, 255, 255));
-		lblKampf.setBounds(54, 34, 546, 109);
+		lblKampf.setBounds(25, 0, 546, 109);
 		frame.getContentPane().add(lblKampf);
 
 		//Spieler1:
 
+		//Anschrift Avatar
+		JLabel lblNewLabel = new JLabel(Avatar_1.getClass().getSimpleName());
+		lblNewLabel.setForeground(Color.WHITE);
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(49, 178, 263, 21);
+		frame.getContentPane().add(lblNewLabel);
 		//Bild für Avatar
 		JLabel Spieler_Avatar_Lable = new JLabel();
 		Spieler_Avatar_Lable.setIcon(new ImageIcon(this.getClass().getResource(FL.getAvatarImage(Avatar_1))));
-		Spieler_Avatar_Lable.setBounds(54, 225, 256, 256);
+		Spieler_Avatar_Lable.setBounds(49, 231, 263, 256);
 		frame.getContentPane().add(Spieler_Avatar_Lable);
 
 		//Lebensanzeige
-		
+
 		RoundedUp_1 = (int) Math.ceil(Avatar_1.getLebenspunkte());
-		
+
 		JLabel Lebensanzeige = new JLabel(Integer.toString((RoundedUp_1)));
 		Lebensanzeige.setFont(new Font("Tahoma", Font.BOLD, 32));
 		Lebensanzeige.setForeground(new Color(255, 255, 255));
 
-		Lebensanzeige.setBounds(380, 289, 128, 128);
+		Lebensanzeige.setBounds(335, 289, 128, 128);
 		frame.getContentPane().add(Lebensanzeige);
 		Lebensanzeige.setIcon(new ImageIcon(this.getClass().getResource(FL.getHPImage())));
 		Lebensanzeige.setHorizontalTextPosition(JLabel.CENTER);
@@ -104,9 +112,18 @@ public class Frame2 {
 
 
 		//Spieler2:
+		//Anschrift Avatar
+		JLabel lblNewLabel_1 = new JLabel(Avatar_2.getClass().getSimpleName());
+
+		lblNewLabel_1.setForeground(Color.WHITE);
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel_1.setBounds(850, 76, 128, 33);
+		frame.getContentPane().add(lblNewLabel_1);
+
 		//Bild für Gegnerischen Avatar
 		JLabel Spieler2_Avatar_Lable = new JLabel("");
-		Spieler2_Avatar_Lable.setBounds(863, 83, 128, 128);
+		Spieler2_Avatar_Lable.setBounds(850, 119, 128, 128);
 		frame.getContentPane().add(Spieler2_Avatar_Lable);
 
 		BufferedImage imgA = null;
@@ -124,7 +141,7 @@ public class Frame2 {
 
 		//Lebensanzeige für Gegneravatar
 		RoundedUp_2 = (int) Math.ceil(Avatar_2.getLebenspunkte());
-		
+
 		JLabel Spieler2_Lebensanzeige = new JLabel(Integer.toString((RoundedUp_2)));
 		Spieler2_Lebensanzeige.setHorizontalTextPosition(JLabel.CENTER);
 		Spieler2_Lebensanzeige.setBounds(767, 113, 64, 64);
@@ -157,16 +174,17 @@ public class Frame2 {
 
 
 		btnNewButton.addActionListener(new ActionListener() {
-			
+
 			public void actionPerformed(ActionEvent e) {
-				
+
 				RoundedUp_1 = (int) Math.ceil(Avatar_1.getLebenspunkte());
 				Lebensanzeige.setText(Integer.toString((RoundedUp_1)));
 
 				RoundedUp_2 = (int) Math.ceil(Avatar_2.getLebenspunkte());
 				Spieler2_Lebensanzeige.setText(Integer.toString((RoundedUp_2)));
+
 				if(k.gestorben(Avatar_1) == false && k.gestorben(Avatar_2) == false) {
-				k.kaempfen();
+					k.kaempfen();
 				}
 				RoundedUp_1 = (int) Math.ceil(Avatar_1.getLebenspunkte());
 				Lebensanzeige.setText(Integer.toString((RoundedUp_1)));
@@ -174,15 +192,16 @@ public class Frame2 {
 				RoundedUp_2 = (int) Math.ceil(Avatar_2.getLebenspunkte());
 				Spieler2_Lebensanzeige.setText(Integer.toString((RoundedUp_2)));
 				
-				
+
 
 			}
 		});
-		
+
 		btnNewButton.setBackground(new Color(255, 255, 255));
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 32));
-		btnNewButton.setBounds(70, 524, 230, 45);
+		btnNewButton.setBounds(70, 524, 242, 45);
 		frame.getContentPane().add(btnNewButton);
+
 
 
 	}
