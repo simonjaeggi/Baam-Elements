@@ -23,7 +23,7 @@ import logic.*;
 
 public class Frame1 {
 	private AuswahlAvatar AA = new AuswahlAvatar();
-	private JFrame frame;
+	protected JFrame frame;
 	private Avatar Avatar_1;
 	private Avatar Avatar_2;
 
@@ -56,6 +56,7 @@ public class Frame1 {
 	 * Initialize the contents of the frame.
 	 */
 	public void initialize() {
+		
 		frame = new JFrame("Waehle deinen Kaempfer");
 		frame.getContentPane().setBackground(Color.BLACK);
 		frame.setBounds(100, 100,  1060, 666);
