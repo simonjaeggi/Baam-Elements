@@ -21,34 +21,46 @@ public class Kampf {
 		this.Avatar_2 = Avatar_2;
 		as = new AvatarStaerke(Avatar_1, Avatar_2);
 		StarkerAvatar = as.Staerkenvergleich();
-		
-		
+
+
 	}
 	/**
 	 * hier werden die einzelnen Angriffe ausgefuehrt und verrechnet. Falls einer der Avatare stirbt wird eine entsprechende Methode aufgerufen.
 	 */
 	public void kaempfen(){
-		
+
 		double zw = Avatar_1.AngreifenAufrufen();
-		if(Avatar_1 == StarkerAvatar){
-			zw = zw * 1.2;
-			
-		}
-		Avatar_2.WenigerLebenspunkte(zw);
-		if (gestorben(Avatar_2) == true){
-			gewonnen();
-		}
-		zw = Avatar_2.AngreifenAufrufen();
-		if(Avatar_2 == StarkerAvatar){
-			zw = zw * 1.2;
-		}
-		Avatar_1.WenigerLebenspunkte(zw);
-		if (gestorben(Avatar_1) == true){
-			verloren();
-			
-		}
+
+
+	
 		
-	}
+			if(Avatar_1 == StarkerAvatar){
+				zw = zw * 1.2;
+
+			}
+			Avatar_2.WenigerLebenspunkte(zw);
+			if (gestorben(Avatar_2) == true){
+				gewonnen();
+				return;
+				
+
+			}
+			zw = Avatar_2.AngreifenAufrufen();
+			if(Avatar_2 == StarkerAvatar){
+				zw = zw * 1.2;
+			}
+			Avatar_1.WenigerLebenspunkte(zw);
+			if (gestorben(Avatar_1) == true){
+				verloren();
+				return;
+			
+
+			}
+			
+	
+		}
+
+	
 	/**
 	 * 
 	 * @param avatar
@@ -72,6 +84,6 @@ public class Kampf {
 	 * Diese Methode wird aufgerufen, wenn der Spieler verloren hat. Eine entsprechende Meldung wird ausgegeben.
 	 */
 	private void verloren(){
-		System.out.println("Awww, you lost!");
+	System.out.println("Awww, you lost!");
 	}
 }

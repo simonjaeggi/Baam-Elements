@@ -8,6 +8,7 @@ import java.awt.Color;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.border.LineBorder;
@@ -17,6 +18,8 @@ import data.FileLocations;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.io.IOException;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -29,6 +32,8 @@ import javax.swing.JPopupMenu;
 import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 
 /**
@@ -175,22 +180,10 @@ public class Frame2 {
 
 		frame.getContentPane().add(Spieler2_Lebensanzeige);
 
-		//Button playAgain
-		JButton playAgain = new JButton("Play Again!");
-
-		playAgain.addActionListener(new ActionListener() {
 
 
 
-			public void actionPerformed(ActionEvent e) {
-				Frame1 F1 = new Frame1();
-				F1.initialize();
-				frame.dispose();
-
-			}
-
-
-		});
+	
 		//Button Schlag
 		JButton btnNewButton = new JButton("Schlag");
 		btnNewButton.setFocusPainted(false);
@@ -214,10 +207,38 @@ public class Frame2 {
 
 				RoundedUp_2 = (int) Math.ceil(Avatar_2.getLebenspunkte());
 				Spieler2_Lebensanzeige.setText(Integer.toString((RoundedUp_2)));
+				
 				if(k.gestorben(Avatar_1) == true) {
-					JOptionPane.showMessageDialog(playAgain,  "AWWWWWWWW YOU LOST");
+					
+
+					 String[] options = {"Yes", "No"};
+				        int x = JOptionPane.showOptionDialog(frame, "Aww you lost! \r\n"+"Do you want to restart the game?",
+				                "", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, imageIcon, options, options[0]);
+
+				        if(x == 0) {
+				        	Frame1 F1 = new Frame1();
+							F1.initialize();
+							F1.frame.setVisible(true);
+							frame.dispose();
+
+				        }else if(x==1){
+				        	System.exit(0);
+				        }
 
 				}else if(k.gestorben(Avatar_2) == true){
+					 String[] options = {"Yes", "No"};
+				        int x = JOptionPane.showOptionDialog(frame, "Yaaaay you won! \r\n"+"Do you want to restart the game?",
+				                "", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, imageIcon, options, options[0]);
+
+				        if(x == 0) {
+				        	Frame1 F1 = new Frame1();
+							F1.initialize();
+							F1.frame.setVisible(true);
+							frame.dispose();
+
+				        }else if(x==1){
+				        	System.exit(0);
+				        }
 
 				}
 
