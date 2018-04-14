@@ -70,8 +70,8 @@ public class Frame2 {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
-		
-		
+
+
 
 
 
@@ -177,17 +177,20 @@ public class Frame2 {
 
 		//Button playAgain
 		JButton playAgain = new JButton("Play Again!");
-		playAgain.addActionListener(new ActionListener() {
-			Frame1 F1 = new Frame1();
 
-	
+		playAgain.addActionListener(new ActionListener() {
+
+
+
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				
+				Frame1 F1 = new Frame1();
+				F1.initialize();
+				frame.dispose();
+
 			}
-			
-			
-		}
+
+
+		});
 		//Button Schlag
 		JButton btnNewButton = new JButton("Schlag");
 		btnNewButton.setFocusPainted(false);
@@ -215,9 +218,9 @@ public class Frame2 {
 					JOptionPane.showMessageDialog(playAgain,  "AWWWWWWWW YOU LOST");
 
 				}else if(k.gestorben(Avatar_2) == true){
-					
+
 				}
-				
+
 
 			}
 		});
@@ -230,21 +233,6 @@ public class Frame2 {
 
 
 	}
-	private static void addPopup(Component component, final JPopupMenu popup) {
-		component.addMouseListener(new MouseAdapter() {
-			public void mousePressed(MouseEvent e) {
-				if (e.isPopupTrigger()) {
-					showMenu(e);
-				}
-			}
-			public void mouseReleased(MouseEvent e) {
-				if (e.isPopupTrigger()) {
-					showMenu(e);
-				}
-			}
-			private void showMenu(MouseEvent e) {
-				popup.show(e.getComponent(), e.getX(), e.getY());
-			}
-		});
-	}
+
+
 }

@@ -48,14 +48,14 @@ public class Frame1 {
 	/**
 	 * Create the application.
 	 */
-	public Frame1() {
+	protected Frame1() {
 		initialize();
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	public void initialize() {
 		frame = new JFrame("Waehle deinen Kaempfer");
 		frame.getContentPane().setBackground(Color.BLACK);
 		frame.setBounds(100, 100,  1060, 666);
