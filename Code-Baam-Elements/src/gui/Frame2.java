@@ -8,32 +8,27 @@ import java.awt.Color;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JDialog;
+
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.border.LineBorder;
+
 
 import data.FileLocations;
 
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
+
 import java.io.IOException;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 import logic.Avatar;
 import logic.Kampf;
-import javax.swing.border.Border;
+
 import javax.swing.SwingConstants;
-import javax.swing.JPopupMenu;
-import java.awt.Component;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+
+
 
 
 /**
