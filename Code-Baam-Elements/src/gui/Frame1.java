@@ -173,7 +173,7 @@ public class Frame1 {
 		help.setFocusPainted(false);
 		help.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Waehle den Avatar aus mit dem du dich ins Gefecht stuerzen moechtest!");
+				JOptionPane.showMessageDialog(frame, "Waehle den Avatar aus mit dem du dich ins Gefecht stuerzen moechtest!");
 			}
 		});
 		help.setFont(new Font("Tahoma", Font.BOLD, 19));
