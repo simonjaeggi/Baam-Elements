@@ -4,11 +4,20 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+/**
+ * 
+ * @author Simon Jaeggi, Lukas Reinhardt
+ * Dieses Junit Testfile dient zum Test der Funktion schlag.
+ *
+ */
 public class SchlagTest {
 	Avatar Avatar_1 = new Feuerelementar();
 	Avatar Avatar_2 = new Erdelementar();
 	Kampf s = new Kampf(Avatar_1, Avatar_2);
-
+	/**
+	 * hier wird jeweils vor und nach einem kampf auf die korrekte Veraenderung der Lebenspunkte ueberprueft
+	 * ausserdem ob der richtige Avatar gestorben ist.
+	 */
 
 	@Test
 	public void testAngreifen() {
