@@ -78,9 +78,6 @@ public class Frame2 {
 
 
 
-
-
-
 		//Titel
 		JLabel lblKampf = new JLabel("Kampf");
 		lblKampf.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 60));
@@ -88,25 +85,23 @@ public class Frame2 {
 		lblKampf.setBounds(25, 0, 546, 109);
 		frame.getContentPane().add(lblKampf);
 
-		//Spieler1:
-
-		//Anschrift Avatar
+	//Spieler1:
+		//Anschrift Avatar_1
 		JLabel lblNewLabel = new JLabel(Avatar_1.getClass().getSimpleName());
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(49, 178, 263, 21);
 		frame.getContentPane().add(lblNewLabel);
-		//Bild für Avatar
+		
+		//Bild für Avatar_1
 		JLabel Spieler_Avatar_Lable = new JLabel();
 		Spieler_Avatar_Lable.setIcon(new ImageIcon(this.getClass().getResource(FL.getAvatarImage(Avatar_1))));
 		Spieler_Avatar_Lable.setBounds(49, 231, 263, 256);
 		frame.getContentPane().add(Spieler_Avatar_Lable);
 
 		//Lebensanzeige
-
 		RoundedUp_1 = (int) Math.ceil(Avatar_1.getLebenspunkte());
-
 		JLabel Lebensanzeige = new JLabel(Integer.toString((RoundedUp_1)));
 		Lebensanzeige.setFont(new Font("Tahoma", Font.BOLD, 32));
 		Lebensanzeige.setForeground(new Color(255, 255, 255));
@@ -116,17 +111,11 @@ public class Frame2 {
 		Lebensanzeige.setIcon(new ImageIcon(this.getClass().getResource(FL.getHPImage())));
 		Lebensanzeige.setHorizontalTextPosition(JLabel.CENTER);
 
-		//Hintergrund für Lebensanzeige(Herz)
 
 
-
-
-
-
-		//Spieler2:
+	//Spieler2:
 		//Anschrift Avatar
 		JLabel lblNewLabel_1 = new JLabel(Avatar_2.getClass().getSimpleName());
-
 		lblNewLabel_1.setForeground(Color.WHITE);
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -137,7 +126,8 @@ public class Frame2 {
 		JLabel Spieler2_Avatar_Lable = new JLabel("");
 		Spieler2_Avatar_Lable.setBounds(850, 119, 128, 128);
 		frame.getContentPane().add(Spieler2_Avatar_Lable);
-
+		
+		//Passt die groesse des Bildes an die groesse des JLabels an
 		BufferedImage imgA = null;
 		try {
 			imgA = ImageIO.read(this.getClass().getResource(FL.getAvatarImage(Avatar_2)));
@@ -147,22 +137,18 @@ public class Frame2 {
 		}
 		Image dimgA = imgA.getScaledInstance(Spieler2_Avatar_Lable.getWidth(), Spieler2_Avatar_Lable.getHeight(),
 				Image.SCALE_SMOOTH);
-
 		ImageIcon imageIconA = new ImageIcon(dimgA);
 		Spieler2_Avatar_Lable.setIcon(imageIconA);
 
 		//Lebensanzeige für Gegneravatar
 		RoundedUp_2 = (int) Math.ceil(Avatar_2.getLebenspunkte());
-
 		JLabel Spieler2_Lebensanzeige = new JLabel(Integer.toString((RoundedUp_2)));
 		Spieler2_Lebensanzeige.setHorizontalTextPosition(JLabel.CENTER);
 		Spieler2_Lebensanzeige.setBounds(767, 113, 64, 64);
 		Spieler2_Lebensanzeige.setForeground(new Color(255, 255, 255));
 		Spieler2_Lebensanzeige.setFont(new Font("Tahoma", Font.BOLD, 16));
 
-
 		//Passt die groesse des Bildes an die groesse des JLabels an
-
 		BufferedImage img = null;
 		try {
 			img = ImageIO.read(this.getClass().getResource(FL.getHPImage()));
@@ -173,21 +159,14 @@ public class Frame2 {
 
 		Image dimg = img.getScaledInstance(Spieler2_Lebensanzeige.getWidth(), Spieler2_Lebensanzeige.getHeight(),
 				Image.SCALE_SMOOTH);
-
 		ImageIcon imageIcon = new ImageIcon(dimg);
 		Spieler2_Lebensanzeige.setIcon(imageIcon);
-
-
 		frame.getContentPane().add(Spieler2_Lebensanzeige);
 
 
-
-
-	
 		//Button Schlag
 		JButton btnNewButton = new JButton("Schlag");
 		btnNewButton.setFocusPainted(false);
-
 
 		btnNewButton.addActionListener(new ActionListener() {
 
@@ -208,9 +187,9 @@ public class Frame2 {
 				RoundedUp_2 = (int) Math.ceil(Avatar_2.getLebenspunkte());
 				Spieler2_Lebensanzeige.setText(Integer.toString((RoundedUp_2)));
 				
+				
+				//verloren Meldung + restart abfrage
 				if(k.gestorben(Avatar_1) == true) {
-					
-
 					 String[] options = {"Yes", "No"};
 				        int x = JOptionPane.showOptionDialog(frame, "Aww you lost! \r\n"+"Do you want to restart the game?",
 				                "", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, imageIcon, options, options[0]);
@@ -224,7 +203,7 @@ public class Frame2 {
 				        }else if(x==1){
 				        	System.exit(0);
 				        }
-
+				//gewonnen abfrage
 				}else if(k.gestorben(Avatar_2) == true){
 					 String[] options = {"Yes", "No"};
 				        int x = JOptionPane.showOptionDialog(frame, "Yaaaay you won! \r\n"+"Do you want to restart the game?",
