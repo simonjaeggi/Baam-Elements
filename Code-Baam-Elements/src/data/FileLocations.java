@@ -5,10 +5,16 @@ import logic.*;
 /**
  * 
  * @author Simon Jaeggi, Lukas Reinhardt
- * Die Klasse gibt fuer den ensprechenden Avatar die ensprechende File location an.
+ * Die Klasse gibt fuer die verlangten Bilder die ensprechende File location an.
  */
 
 public class FileLocations {
+	/**
+	 * 
+	 * @param avatar
+	 * @return
+	 * Hier wird der Pfad des Bildes eines einzelnen Avatars zurückgegeben
+	 */
 	public String getAvatarImage(Avatar avatar) {
 		String zw = null;
 		if(avatar instanceof Feuerelementar) {
@@ -22,6 +28,11 @@ public class FileLocations {
 		}
 		return zw;
 	}
+	/**
+	 * 
+	 * @return
+	 * hier wird der Pfad zum Bild fuer die Lebensanzeige zurueckgegeben.
+	 */
 	public String getHPImage() {
 		String zw = "/data/Lebensanzeige_Hintergrund.png";
 		return zw;
