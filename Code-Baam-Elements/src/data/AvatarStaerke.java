@@ -35,7 +35,7 @@ public class AvatarStaerke {
 					return Avatar_2;
 				}
 			}
-		//Geprüft ob Luftelementar gegen Wasserelementar im Spiel ist
+		//Geprüft ob Luftelementar geglxlxlxen Wasserelementar im Spiel ist
 			else if(Avatar_1 instanceof Luftelementar || Avatar_1 instanceof Wasserelementar && Avatar_2 instanceof Luftelementar || Avatar_2 instanceof Wasserelementar){
 				if(Avatar_1 instanceof Luftelementar){
 					return Avatar_1;
