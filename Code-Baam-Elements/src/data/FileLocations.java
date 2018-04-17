@@ -2,6 +2,12 @@ package data;
 
 import logic.*;
 
+/**
+ * 
+ * @author Simon Jaeggi, Lukas Reinhardt
+ * Die Klasse gibt fuer den ensprechenden Avatar die ensprechende File location an.
+ */
+
 public class FileLocations {
 	public String getAvatarImage(Avatar avatar) {
 		String zw = null;
