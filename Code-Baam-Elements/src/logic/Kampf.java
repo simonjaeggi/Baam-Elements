@@ -32,35 +32,35 @@ public class Kampf {
 		double zw = Avatar_1.AngreifenAufrufen();
 
 
-	
-		
-			if(Avatar_1 == StarkerAvatar){
-				zw = zw * 1.2;
 
-			}
-			Avatar_2.WenigerLebenspunkte(zw);
-			if (gestorben(Avatar_2) == true){
-				gewonnen();
-				return;
-				
 
-			}
-			zw = Avatar_2.AngreifenAufrufen();
-			if(Avatar_2 == StarkerAvatar){
-				zw = zw * 1.2;
-			}
-			Avatar_1.WenigerLebenspunkte(zw);
-			if (gestorben(Avatar_1) == true){
-				verloren();
-				return;
-			
+		if(Avatar_1 == StarkerAvatar){
+			zw = zw * 1.2;
 
-			}
-			
-	
+		}
+		Avatar_2.WenigerLebenspunkte(zw);
+		if (gestorben(Avatar_2) == true){
+			gewonnen();
+			return;
+
+
+		}
+		zw = Avatar_2.AngreifenAufrufen();
+		if(Avatar_2 == StarkerAvatar){
+			zw = zw * 1.2;
+		}
+		Avatar_1.WenigerLebenspunkte(zw);
+		if (gestorben(Avatar_1) == true){
+			verloren();
+			return;
+
+
 		}
 
-	
+
+	}
+
+
 	/**
 	 * 
 	 * @param avatar
